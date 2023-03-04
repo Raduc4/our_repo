@@ -52,22 +52,51 @@ pub struct Record {
     #[serde(rename(deserialize = "TECHNOLOGY"))]
     pub technology: String,
 
-    // "IPTV_STB_QUANTITY";
-    // "INET_PACK";
-    // "IPTV_PACK";
-    // "QNT_APELARI";
-    // "QNT_PORT_REZ";
-    // "AVG_PERCEPTION";
-    // "QNT_SUSP";
-    // "QNT_INCEDENT";
-    // "LUNA_SUSPENDARI";
-    // "LUNA_INCIDENT";
-    // "LUNA_APEL";
-    // "LUNI_DATOR";
-    // "PERIOADA_ACHITARII";
-    // "SUMA_ACHITARII";
-    // "MULTIPLAY";
-    // "CNT_SERVICII";
+    #[serde(rename(deserialize = "IPTV_STB_QUANTITY"))]
+    pub iptv_stb_quantity: String,
+
+    #[serde(rename(deserialize = "INET_PACK"))]
+    pub inet_pack: String,
+
+    #[serde(rename(deserialize = "QNT_APELARI"))]
+    pub qnt_calls: String,
+
+    #[serde(rename(deserialize = "QNT_PORT_REZ"))]
+    pub qnt_port_res: String,
+
+    #[serde(rename(deserialize = "AVG_PERCEPTION"))]
+    pub avg_perception: String,
+
+    #[serde(rename(deserialize = "QNT_SUSP"))]
+    pub qnt_susp: String,
+
+    #[serde(rename(deserialize = "QNT_INCEDENT"))]
+    pub qnt_incident: String,
+
+    #[serde(rename(deserialize = "LUNA_SUSPENDARI"))]
+    pub dissolution_month: String,
+
+    #[serde(rename(deserialize = "LUNA_INCIDENT"))]
+    pub incident_month: String,
+
+    #[serde(rename(deserialize = "LUNA_APEL"))]
+    pub call_month: String,
+
+    #[serde(rename(deserialize = "LUNI_DATOR"))]
+    pub debth_month: String,
+
+    #[serde(rename(deserialize = "PERIOADA_ACHITARII"))]
+    pub payment_period: String,
+
+    #[serde(rename(deserialize = "SUMA_ACHITARII"))]
+    pub payment_sum: String,
+
+    #[serde(rename(deserialize = "MULTIPLAY"))]
+    pub multiply: String,
+
+    #[serde(rename(deserialize = "CNT_SERVICII"))]
+    pub cnt_services: String,
+
     #[serde(rename(deserialize = "IS_CHURN"))]
     pub is_churn: Option<u8>,
 

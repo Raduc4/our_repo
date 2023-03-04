@@ -16,8 +16,8 @@ fn run() -> Result<(), Box<dyn Error>> {
     for result in rdr.deserialize() {
         let record: Record = result?;
 
-        // println!("{:?}", record);
-        // break;
+        println!("{:#?}", record);
+        break;
         records.push(record);
     }
 
