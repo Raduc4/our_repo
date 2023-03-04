@@ -122,8 +122,8 @@ fn train() -> Result<(), Box<dyn Error>> {
         let (train_data, expected) = scenarios.get(random).unwrap();
 
         let record = normalize_dataset(train_data);
-
         let result = nn.predict(&record);
+        
         println!("{:?} = {:?}, {:?}", train_data, result, expected)
     }
 
