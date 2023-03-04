@@ -43,6 +43,7 @@ name = "data_munch"
 version = "0.1.0"
 dependencies = [
  "csv",
+ "rand",
  "serde",
  "vinyana",
 ]

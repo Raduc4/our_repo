@@ -30,12 +30,11 @@ pub struct Record {
 
     #[serde(rename(deserialize = "INCIDENTE"))]
     pub incidents: Option<i32>,
-
     #[serde(rename(deserialize = "STATUT_CONTRACT"))]
     pub contract_status: String,
 
     #[serde(rename(deserialize = "SOLICITARI_REZILIERE"))]
-    pub termination_request: String,
+    pub termination_request: Option<i32>, // avg
 
     #[serde(rename(deserialize = "NET_PARAMS"))]
     pub net_params: String,
@@ -71,7 +70,7 @@ pub struct Record {
     pub qnt_susp: String,
 
     #[serde(rename(deserialize = "QNT_INCEDENT"))]
-    pub qnt_incident: String,
+    pub qnt_incident: Option<i32>,
 
     #[serde(rename(deserialize = "LUNA_SUSPENDARI"))]
     pub dissolution_month: String,
