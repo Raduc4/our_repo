@@ -2,7 +2,7 @@ use std::error::Error;
 
 use serde::Deserialize;
 
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Deserialize, Clone)]
 pub struct Record {
     #[serde(rename(deserialize = "ACCOUNTID"))]
     pub account_id: String,
@@ -31,7 +31,7 @@ pub struct Record {
     #[serde(rename(deserialize = "INCIDENTE"))]
     pub incidents: Option<i32>,
     #[serde(rename(deserialize = "STATUT_CONTRACT"))]
-    pub contract_status: String,
+    pub contract_status: Option<i32>,
 
     #[serde(rename(deserialize = "SOLICITARI_REZILIERE"))]
     pub termination_request: Option<i32>, // avg
@@ -43,10 +43,10 @@ pub struct Record {
     pub subscription_price: String,
 
     #[serde(rename(deserialize = "QUALITY_PERCEPTION"))]
-    pub quality_perception: String,
+    pub quality_perception: Option<i32>,
 
     #[serde(rename(deserialize = "COST_PERCEPTION"))]
-    pub cost_perception: String,
+    pub cost_perception: Option<i32>,
 
     #[serde(rename(deserialize = "TECHNOLOGY"))]
     pub technology: String,
@@ -58,16 +58,16 @@ pub struct Record {
     pub inet_pack: String,
 
     #[serde(rename(deserialize = "QNT_APELARI"))]
-    pub qnt_calls: String,
+    pub qnt_calls: Option<i32>,
 
     #[serde(rename(deserialize = "QNT_PORT_REZ"))]
-    pub qnt_port_res: String,
+    pub qnt_port_res: Option<i32>,
 
     #[serde(rename(deserialize = "AVG_PERCEPTION"))]
     pub avg_perception: String,
 
     #[serde(rename(deserialize = "QNT_SUSP"))]
-    pub qnt_susp: String,
+    pub qnt_susp: Option<i32>,
 
     #[serde(rename(deserialize = "QNT_INCEDENT"))]
     pub qnt_incident: Option<i32>,
@@ -82,7 +82,7 @@ pub struct Record {
     pub call_month: String,
 
     #[serde(rename(deserialize = "LUNI_DATOR"))]
-    pub debth_month: String,
+    pub debth_month: Option<i32>,
 
     #[serde(rename(deserialize = "PERIOADA_ACHITARII"))]
     pub payment_period: String,
@@ -97,7 +97,7 @@ pub struct Record {
     pub cnt_services: String,
 
     #[serde(rename(deserialize = "IS_CHURN"))]
-    pub is_churn: Option<u8>,
+    pub is_churn: Option<i32>,
 
     #[serde(rename(deserialize = "CHURN_DATE"))]
     pub churn_date: String,
