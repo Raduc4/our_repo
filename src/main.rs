@@ -41,12 +41,13 @@ fn train() -> Result<(), Box<dyn Error>> {
 
     for (_, entries) in &records {
         let last = entries.last().unwrap();
-        let max_debt = last.debth_month.unwrap_or(0);
-        let contract_status = last.contract_status.unwrap();
-        let qty_calls = last.qnt_calls.unwrap_or(0);
-        let qty_incidents = last.qnt_incident.unwrap_or(0);
-        let qty_port_rez = last.qnt_port_res.unwrap_or(0);
+        let max_debt = last.debth_month.unwrap_or(0); //1
+        let contract_status = last.contract_status.unwrap(); //2
+        let qty_calls = last.qnt_calls.unwrap_or(0); //5
+        let qty_incidents = last.qnt_incident.unwrap_or(0); //3
+        let qty_port_rez = last.qnt_port_res.unwrap_or(0); //6
 
+        //3
         let payment_sum = {
             if last.payment_sum.contains(",") {
                 last.payment_sum
@@ -73,7 +74,7 @@ fn train() -> Result<(), Box<dyn Error>> {
             }
         };
 
-        let abs = payment_sum - subscription_price;
+        let abs = payment_sum - subscription_price; //4
 
         g_max_debt = g_max_debt.max(max_debt as f32);
         g_min_debt = g_min_debt.min(max_debt as f32);
@@ -123,7 +124,7 @@ fn train() -> Result<(), Box<dyn Error>> {
 
         let record = normalize_dataset(train_data);
         let result = nn.predict(&record);
-        
+
         println!("{:?} = {:?}, {:?}", train_data, result, expected)
     }
 
